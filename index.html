@@ -8,98 +8,101 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F5F5F0;min-height:100vh}
-
-/* ── LOADING SCREEN ── */
+/* LOADING */
 #loading{position:fixed;inset:0;background:#0B3020;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;overflow:hidden;transition:opacity 0.6s ease}
 #loading.out{opacity:0;pointer-events:none}
 .c1{position:absolute;width:520px;height:520px;border-radius:50%;border:0.5px solid rgba(198,147,40,0.1);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 3.5s ease-in-out infinite}
 .c2{position:absolute;width:380px;height:380px;border-radius:50%;border:0.5px solid rgba(198,147,40,0.15);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 3.5s ease-in-out infinite 0.5s}
 .c3{position:absolute;width:260px;height:260px;border-radius:50%;border:0.5px solid rgba(198,147,40,0.22);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 3.5s ease-in-out infinite 1s}
-.dot-a{position:absolute;width:6px;height:6px;border-radius:50%;background:#C69328;opacity:0.4;top:18%;left:12%;animation:float 4s ease-in-out infinite}
-.dot-b{position:absolute;width:4px;height:4px;border-radius:50%;background:#C69328;opacity:0.3;bottom:20%;right:14%;animation:float 4s ease-in-out infinite 2s}
-.dot-c{position:absolute;width:3px;height:3px;border-radius:50%;background:#9FD4B8;opacity:0.35;top:22%;right:18%;animation:float 5s ease-in-out infinite 1s}
-.ld-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
-.ld-dot{width:10px;height:10px;border-radius:50%;background:#C69328;margin-bottom:28px;animation:glow 2s ease-in-out infinite}
-.ld-title{font-size:56px;font-weight:600;color:#F0EBE0;letter-spacing:-0.02em;line-height:1;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.2s}
-.ld-title span{color:#C69328}
-.ld-sub{font-size:12px;color:#7AA88A;margin-top:10px;letter-spacing:0.07em;text-transform:uppercase;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.5s}
-.ld-div{width:40px;height:0.5px;background:#C69328;opacity:0.5;margin:24px 0;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.7s}
-.ld-bar-row{display:flex;align-items:center;gap:10px;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:1s}
-.ld-bar{width:130px;height:2px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
-.ld-fill{width:0%;height:100%;background:#C69328;border-radius:2px;animation:load 2.2s ease forwards;animation-delay:1.2s}
-.ld-bar-txt{font-size:11px;color:#5A8A6A;letter-spacing:0.04em}
-.ld-btn{margin-top:32px;background:transparent;border:0.5px solid rgba(198,147,40,0.5);color:#C69328;font-size:12px;font-family:inherit;padding:11px 32px;border-radius:20px;cursor:pointer;letter-spacing:0.07em;text-transform:uppercase;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:2.2s;transition:background 0.2s,border-color 0.2s}
-.ld-btn:hover{background:rgba(198,147,40,0.1);border-color:#C69328}
-.ld-footer{position:absolute;bottom:24px;font-size:11px;color:rgba(122,168,138,0.45);letter-spacing:0.04em;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:1.8s}
+.da{position:absolute;width:6px;height:6px;border-radius:50%;background:#C69328;opacity:0.4;top:18%;left:12%;animation:float 4s ease-in-out infinite}
+.db{position:absolute;width:4px;height:4px;border-radius:50%;background:#C69328;opacity:0.3;bottom:20%;right:14%;animation:float 4s ease-in-out infinite 2s}
+.dc{position:absolute;width:3px;height:3px;border-radius:50%;background:#9FD4B8;opacity:0.35;top:22%;right:18%;animation:float 5s ease-in-out infinite 1s}
+.ldc{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.ldd{width:10px;height:10px;border-radius:50%;background:#C69328;margin-bottom:28px;animation:glow 2s ease-in-out infinite}
+.ldt{font-size:56px;font-weight:600;color:#F0EBE0;letter-spacing:-0.02em;line-height:1;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.2s}
+.ldt span{color:#C69328}
+.lds{font-size:12px;color:#7AA88A;margin-top:10px;letter-spacing:0.07em;text-transform:uppercase;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.5s}
+.lddv{width:40px;height:0.5px;background:#C69328;opacity:0.5;margin:24px 0;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:0.7s}
+.ldbr{display:flex;align-items:center;gap:10px;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:1s}
+.ldb{width:130px;height:2px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.ldf{width:0%;height:100%;background:#C69328;border-radius:2px;animation:load 2.2s ease forwards;animation-delay:1.2s}
+.ldbt{font-size:11px;color:#5A8A6A;letter-spacing:0.04em}
+.ldbtn{margin-top:32px;background:transparent;border:0.5px solid rgba(198,147,40,0.5);color:#C69328;font-size:12px;font-family:inherit;padding:11px 32px;border-radius:20px;cursor:pointer;letter-spacing:0.07em;text-transform:uppercase;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:2.2s;transition:background 0.2s}
+.ldbtn:hover{background:rgba(198,147,40,0.1)}
+.ldft{position:absolute;bottom:24px;font-size:11px;color:rgba(122,168,138,0.45);letter-spacing:0.04em;animation:fadeUp 0.8s ease forwards;opacity:0;animation-delay:1.8s}
 @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1}50%{transform:translate(-50%,-50%) scale(1.04);opacity:0.65}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes glow{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes load{0%{width:0%}60%{width:72%}80%{width:88%}100%{width:100%}}
-
-/* ── APP ── */
+/* APP */
 #app{display:none;padding:24px 16px;min-height:100vh}
 #app.show{display:block}
-.wrap{width:100%;max-width:900px;margin:0 auto;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #E0E0D8}
+.wrap{width:100%;max-width:960px;margin:0 auto;border-radius:14px;overflow:hidden;background:#fff;border:1px solid #E0E0D8}
 .topbar{background:#0B3020;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
-.tb-left{display:flex;align-items:center;gap:10px}
-.tb-dot{width:8px;height:8px;border-radius:50%;background:#C69328;flex-shrink:0}
-.tb-title{font-size:15px;font-weight:600;color:#F0EBE0;letter-spacing:0.02em}
-.tb-sub{font-size:11px;color:#7AA88A;margin-top:1px}
-.tb-badge{background:#1A5438;border:1px solid #2A7050;border-radius:20px;padding:4px 12px;font-size:11px;color:#A8C4B4}
-.layout{display:grid;grid-template-columns:210px 1fr;min-height:560px}
+.tbl{display:flex;align-items:center;gap:10px}
+.tbd{width:8px;height:8px;border-radius:50%;background:#C69328;flex-shrink:0}
+.tbt{font-size:15px;font-weight:600;color:#F0EBE0}
+.tbs{font-size:11px;color:#7AA88A;margin-top:1px}
+.tbb{background:#1A5438;border:1px solid #2A7050;border-radius:20px;padding:4px 12px;font-size:11px;color:#A8C4B4;cursor:pointer;transition:background 0.2s}
+.tbb:hover{background:#245C44}
+.nav-tabs{background:#0F3826;display:flex;border-bottom:1px solid #1A5438}
+.ntab{padding:10px 20px;font-size:13px;color:#7AA88A;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s}
+.ntab:hover{color:#E8DDD0}
+.ntab.active{color:#C69328;border-bottom-color:#C69328}
+.layout{display:grid;grid-template-columns:210px 1fr;min-height:540px}
 .sidebar{background:#0F3826;border-right:1px solid #1A5438}
-.sb-sec{padding:14px 16px 6px;font-size:10px;color:#5A8A6A;letter-spacing:0.08em;text-transform:uppercase}
+.sbsec{padding:14px 16px 6px;font-size:10px;color:#5A8A6A;letter-spacing:0.08em;text-transform:uppercase}
 .fi{padding:10px 16px;cursor:pointer;border-left:3px solid transparent;transition:background 0.15s}
 .fi:hover{background:rgba(255,255,255,0.05)}
 .fi.active{background:rgba(198,147,40,0.12);border-left-color:#C69328}
-.fi-row{display:flex;align-items:center;gap:9px}
-.fi-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
-.fi-name{font-size:13px;font-weight:500;color:#E8DDD0;line-height:1.3}
-.fi-count{font-size:11px;color:#7AA88A;margin-top:1px}
-.fi-dots{display:flex;gap:4px;margin-top:6px;padding-left:41px}
+.fir{display:flex;align-items:center;gap:9px}
+.fico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.fin{font-size:13px;font-weight:500;color:#E8DDD0;line-height:1.3}
+.fic{font-size:11px;color:#7AA88A;margin-top:1px}
+.fid{display:flex;gap:4px;margin-top:6px;padding-left:41px}
 .sdot{width:6px;height:6px;border-radius:50%;display:inline-block}
 .main{padding:20px;background:#fff;overflow:auto}
 .back-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#666;cursor:pointer;margin-bottom:14px;background:none;border:none;padding:0}
 .back-btn:hover{color:#111}
-.ov-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.ovs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
 .stat{background:#F5F5F0;border-radius:10px;padding:13px 15px}
-.stat-lbl{font-size:11px;color:#888;margin-bottom:5px}
-.stat-num{font-size:26px;font-weight:600;color:#111;line-height:1}
-.stat-sub{font-size:11px;color:#aaa;margin-top:3px}
-.sec-hd{font-size:10px;font-weight:600;color:#888;letter-spacing:0.06em;margin-bottom:10px;text-transform:uppercase}
-.fam-card{background:#fff;border:1px solid #E8E8E0;border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:border-color 0.15s}
-.fam-card:hover{border-color:#C0C0B8}
-.fam-card-hd{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.fam-card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0}
-.fam-card-name{font-size:15px;font-weight:600;color:#111}
-.fam-card-sub{font-size:12px;color:#888;margin-top:2px}
-.mem-row{display:flex;gap:8px;flex-wrap:wrap}
+.stl{font-size:11px;color:#888;margin-bottom:5px}
+.stn{font-size:26px;font-weight:600;color:#111;line-height:1}
+.sts{font-size:11px;color:#aaa;margin-top:3px}
+.sechd{font-size:10px;font-weight:600;color:#888;letter-spacing:0.06em;margin-bottom:10px;text-transform:uppercase}
+.fcard{background:#fff;border:1px solid #E8E8E0;border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:border-color 0.15s}
+.fcard:hover{border-color:#C0C0B8}
+.fchd{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.fcico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0}
+.fcn{font-size:15px;font-weight:600;color:#111}
+.fcs{font-size:12px;color:#888;margin-top:2px}
+.mr{display:flex;gap:8px;flex-wrap:wrap}
 .mm{display:flex;align-items:center;gap:7px;background:#F5F5F0;border-radius:8px;padding:7px 10px;flex:1;min-width:120px;cursor:pointer;transition:background 0.15s}
 .mm:hover{background:#EAEAE3}
-.mm-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}
-.mm-name{font-size:12px;font-weight:500;color:#111;line-height:1.2}
-.mm-age{font-size:11px;color:#888}
-.fv-hd{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#0B3020;border-radius:12px;margin-bottom:16px}
-.fv-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600}
-.fv-title{font-size:17px;font-weight:600;color:#F0EBE0}
-.fv-sub{font-size:12px;color:#7AA88A;margin-top:3px}
+.mmav{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}
+.mmn{font-size:12px;font-weight:500;color:#111;line-height:1.2}
+.mma{font-size:11px;color:#888}
+.fvhd{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#0B3020;border-radius:12px;margin-bottom:16px}
+.fvico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600}
+.fvt{font-size:17px;font-weight:600;color:#F0EBE0}
+.fvs{font-size:12px;color:#7AA88A;margin-top:3px}
 .mg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .mc{background:#fff;border:1px solid #E8E8E0;border-radius:12px;padding:14px;cursor:pointer;transition:border-color 0.15s}
 .mc:hover{border-color:#C0C0B8}
-.mc-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.mc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
-.mc-name{font-size:14px;font-weight:500;color:#111}
-.mc-sub{font-size:12px;color:#888;margin-top:2px}
-.mc-ps{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
-.mc-p{background:#F5F5F0;border-radius:8px;padding:7px 9px}
-.mc-pl{font-size:10px;color:#999;margin-bottom:3px}
-.mc-pv{font-size:14px;font-weight:600}
-.mc-pu{font-size:10px;color:#aaa}
-.ind-hd{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #E8E8E0}
-.ind-av{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
-.ind-name{font-size:17px;font-weight:600;color:#111}
-.ind-sub{font-size:13px;color:#888;margin-top:3px}
+.mct{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.mcav{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
+.mcn{font-size:14px;font-weight:500;color:#111}
+.mcs{font-size:12px;color:#888;margin-top:2px}
+.mcps{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.mcp{background:#F5F5F0;border-radius:8px;padding:7px 9px}
+.mcpl{font-size:10px;color:#999;margin-bottom:3px}
+.mcpv{font-size:14px;font-weight:600}
+.mcpu{font-size:10px;color:#aaa}
+.ihd{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #E8E8E0}
+.iav{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+.in{font-size:17px;font-weight:600;color:#111}
+.is{font-size:13px;color:#888;margin-top:3px}
 .p4g{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
 .p4c{background:#fff;border:1px solid #E8E8E0;border-radius:10px;padding:11px 12px;border-top:3px solid transparent}
 .p4l{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:5px}
@@ -116,178 +119,382 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .ht td{padding:8px 9px;border-bottom:1px solid #E8E8E0;color:#111}
 .ht tr:last-child td{border-bottom:none}
 .loz{display:inline-block;font-size:10px;padding:2px 7px;border-radius:8px;font-weight:500;background:#EBF5EF;color:#0F6E56}
-.na-ban{background:#FFF8EC;border:1px solid #F0D890;border-radius:8px;padding:10px 14px;font-size:12px;color:#7A6010;margin-bottom:12px}
-@media(max-width:600px){.layout{grid-template-columns:1fr}.sidebar{display:none}.p4g{grid-template-columns:repeat(2,1fr)}.mg{grid-template-columns:1fr}.ov-stats{grid-template-columns:1fr}}
+.naban{background:#FFF8EC;border:1px solid #F0D890;border-radius:8px;padding:10px 14px;font-size:12px;color:#7A6010;margin-bottom:12px}
+/* FORM */
+.form-wrap{padding:24px;max-width:600px}
+.form-wrap h2{font-size:18px;font-weight:600;color:#111;margin-bottom:4px}
+.form-wrap p{font-size:13px;color:#888;margin-bottom:20px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:12px;font-weight:500;color:#555;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em}
+.form-group select,.form-group input{width:100%;padding:10px 12px;border:1px solid #E0E0D8;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:#111;outline:none;transition:border-color 0.15s}
+.form-group select:focus,.form-group input:focus{border-color:#0B3020}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.submit-btn{background:#0B3020;color:#F0EBE0;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-family:inherit;font-weight:500;cursor:pointer;transition:background 0.2s;width:100%;margin-top:8px}
+.submit-btn:hover{background:#1A5438}
+.submit-btn:disabled{background:#ccc;cursor:not-allowed}
+.success-banner{background:#EBF5EF;border:1px solid #9FE1CB;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F6E56;margin-bottom:16px;display:none}
+.error-banner{background:#FDECEA;border:1px solid #F5C4B3;border-radius:8px;padding:12px 16px;font-size:13px;color:#993C1D;margin-bottom:16px;display:none}
+.loading-inline{font-size:12px;color:#888;margin-top:8px;display:none}
+.add-fam-btn{background:transparent;border:1px dashed #C0C0B8;color:#888;font-size:13px;font-family:inherit;padding:10px;border-radius:8px;cursor:pointer;width:100%;margin-top:8px;transition:all 0.15s}
+.add-fam-btn:hover{border-color:#0B3020;color:#0B3020}
+@media(max-width:600px){.layout{grid-template-columns:1fr}.sidebar{display:none}.p4g{grid-template-columns:repeat(2,1fr)}.mg{grid-template-columns:1fr}.ovs{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
 <div id="loading">
   <div class="c1"></div><div class="c2"></div><div class="c3"></div>
-  <div class="dot-a"></div><div class="dot-b"></div><div class="dot-c"></div>
-  <div class="ld-content">
-    <div class="ld-dot"></div>
-    <div class="ld-title">KBA <span>Afiyah</span></div>
-    <div class="ld-sub">Rekam Medis Keluarga Besar Bani Asad</div>
-    <div class="ld-div"></div>
-    <div class="ld-bar-row">
-      <div class="ld-bar"><div class="ld-fill"></div></div>
-      <div class="ld-bar-txt">Memuat data...</div>
-    </div>
-    <button class="ld-btn" onclick="enterApp()">Masuk ke Dashboard</button>
+  <div class="da"></div><div class="db"></div><div class="dc"></div>
+  <div class="ldc">
+    <div class="ldd"></div>
+    <div class="ldt">KBA <span>Afiyah</span></div>
+    <div class="lds">Rekam Medis Keluarga Besar Bani Asad</div>
+    <div class="lddv"></div>
+    <div class="ldbr"><div class="ldb"><div class="ldf"></div></div><div class="ldbt">Memuat data...</div></div>
+    <button class="ldbtn" onclick="enterApp()">Masuk ke Dashboard</button>
   </div>
-  <div class="ld-footer">Berbasis Unipdu Medika &nbsp;·&nbsp; Jombang, Jawa Timur</div>
+  <div class="ldft">Berbasis Unipdu Medika &nbsp;·&nbsp; Jombang, Jawa Timur</div>
 </div>
 
 <div id="app">
   <div class="wrap">
     <div class="topbar">
-      <div class="tb-left">
-        <div class="tb-dot"></div>
-        <div><div class="tb-title">KBA Afiyah</div><div class="tb-sub">Rekam Medis Keluarga Besar Bani Asad</div></div>
+      <div class="tbl"><div class="tbd"></div>
+        <div><div class="tbt">KBA Afiyah</div><div class="tbs">Rekam Medis Keluarga Besar Bani Asad</div></div>
       </div>
-      <div class="tb-badge">&#128197; Desember 2024</div>
+      <button class="tbb" onclick="showTab('input')">&#43; Input Data</button>
     </div>
-    <div class="layout">
-      <div class="sidebar"><div class="sb-sec">Keluarga</div><div id="sb"></div></div>
-      <div class="main" id="main"></div>
+    <div class="nav-tabs">
+      <div class="ntab active" id="tab-dashboard" onclick="showTab('dashboard')">Dashboard</div>
+      <div class="ntab" id="tab-input" onclick="showTab('input')">Input Pemeriksaan</div>
+    </div>
+    <div id="view-dashboard">
+      <div class="layout">
+        <div class="sidebar"><div class="sbsec">Keluarga</div><div id="sb"></div></div>
+        <div class="main" id="main"></div>
+      </div>
+    </div>
+    <div id="view-input" style="display:none">
+      <div class="form-wrap">
+        <h2>Input Data Pemeriksaan</h2>
+        <p>Isi form ini setelah selesai cek kesehatan bulanan</p>
+        <div id="success-msg" class="success-banner">&#10003; Data berhasil disimpan!</div>
+        <div id="error-msg" class="error-banner"></div>
+        <div class="form-group">
+          <label>Keluarga</label>
+          <select id="inp-family" onchange="loadMembersFor(this.value)">
+            <option value="">-- Pilih keluarga --</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Anggota</label>
+          <select id="inp-member"><option value="">-- Pilih anggota --</option></select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Bulan</label>
+            <select id="inp-bulan">
+              <option>Januari</option><option>Februari</option><option>Maret</option>
+              <option>April</option><option>Mei</option><option>Juni</option>
+              <option>Juli</option><option>Agustus</option><option>September</option>
+              <option>Oktober</option><option>November</option><option selected>Desember</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tahun</label>
+            <input type="number" id="inp-tahun" value="2024" min="2024" max="2099">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Tekanan Darah (mmHg)</label><input type="number" id="inp-tensi" placeholder="misal: 120"></div>
+          <div class="form-group"><label>Gula Darah (mg/dL)</label><input type="number" id="inp-gula" placeholder="misal: 95"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Kolesterol (mg/dL)</label><input type="number" id="inp-kol" placeholder="misal: 185"></div>
+          <div class="form-group"><label>Asam Urat (mg/dL)</label><input type="number" step="0.1" id="inp-au" placeholder="misal: 5.2"></div>
+        </div>
+        <div class="form-group"><label>Catatan (opsional)</label><input type="text" id="inp-catatan" placeholder="misal: sedang batuk, minum obat tekanan darah..."></div>
+        <button class="submit-btn" onclick="submitData()">Simpan Data Pemeriksaan</button>
+        <div id="loading-inline" class="loading-inline">Menyimpan...</div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid #E8E8E0">
+          <div class="sechd">Tambah anggota baru</div>
+          <div class="form-row">
+            <div class="form-group"><label>Nama lengkap</label><input type="text" id="new-name" placeholder="nama anggota"></div>
+            <div class="form-group"><label>Hubungan</label><input type="text" id="new-rel" placeholder="misal: Kepala keluarga"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Usia</label><input type="number" id="new-age" placeholder="67"></div>
+            <div class="form-group"><label>Jenis kelamin</label>
+              <select id="new-gender"><option value="L">Laki-laki</option><option value="P">Perempuan</option></select>
+            </div>
+          </div>
+          <button class="add-fam-btn" onclick="addMember()">&#43; Tambah Anggota ke Keluarga Terpilih</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
-function enterApp(){
-  document.getElementById('loading').classList.add('out');
-  setTimeout(()=>{
-    document.getElementById('loading').style.display='none';
-    document.getElementById('app').classList.add('show');
-  },650);
+const SURL = 'https://ionoqkbhypgcmdscyrqn.supabase.co';
+const SKEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlvbm9xa2JoeXBnY21kc2N5cnFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAxNDMwNTgsImV4cCI6MjA5NTcxOTA1OH0.z4PD0kJW6bJL9KayHHTISUjE8GMd-YRzNpS9K7pU92A';
+const H = {'Content-Type':'application/json','apikey':SKEY,'Authorization':'Bearer '+SKEY};
+
+async function db(path, method='GET', body=null){
+  const opts = {method, headers:H};
+  if(body) opts.body = JSON.stringify(body);
+  const r = await fetch(SURL+'/rest/v1/'+path, opts);
+  if(!r.ok){ const e=await r.text(); throw new Error(e); }
+  const t = await r.text();
+  return t ? JSON.parse(t) : [];
 }
 
-const FAMILIES=[
-  {id:1,name:"Keluarga A",icon:"KA",color:"#1A4A30",textColor:"#9FD4B8",
-   members:[
-    {id:101,name:"Pakdhe A",rel:"Kepala keluarga",age:67,gender:"L",initials:"PA",color:"#1A4A30",textColor:"#9FD4B8",data:[{m:"Jul",tensi:138,gula:102,kol:192,au:6.1},{m:"Agu",tensi:142,gula:106,kol:198,au:6.3},{m:"Sep",tensi:145,gula:104,kol:205,au:6.0},{m:"Okt",tensi:148,gula:110,kol:212,au:6.4},{m:"Nov",tensi:144,gula:108,kol:208,au:6.2},{m:"Des",tensi:151,gula:114,kol:218,au:6.6}]},
-    {id:102,name:"Budhe A",rel:"Istri",age:63,gender:"P",initials:"BA",color:"#1A4A30",textColor:"#9FD4B8",data:[{m:"Jul",tensi:122,gula:95,kol:218,au:5.2},{m:"Agu",tensi:118,gula:98,kol:225,au:5.4},{m:"Sep",tensi:124,gula:96,kol:231,au:5.1},{m:"Okt",tensi:120,gula:100,kol:238,au:5.5},{m:"Nov",tensi:126,gula:97,kol:242,au:5.3},{m:"Des",tensi:121,gula:99,kol:248,au:5.6}]},
-    {id:103,name:"Cucu A1",rel:"Putra",age:36,gender:"L",initials:"CA",color:"#1A4A30",textColor:"#9FD4B8",data:[{m:"Jul",tensi:118,gula:88,kol:175,au:5.8},{m:"Agu",tensi:120,gula:90,kol:178,au:5.9},{m:"Sep",tensi:116,gula:86,kol:172,au:5.7},{m:"Okt",tensi:122,gula:92,kol:180,au:6.0},{m:"Nov",tensi:119,gula:89,kol:176,au:5.8},{m:"Des",tensi:121,gula:91,kol:179,au:5.9}]},
-  ]},
-  {id:2,name:"Keluarga B",icon:"KB",color:"#7A3A10",textColor:"#F5C4A0",
-   members:[
-    {id:201,name:"Ammi B",rel:"Kepala keluarga",age:71,gender:"L",initials:"AB",color:"#7A3A10",textColor:"#F5C4A0",data:[{m:"Jul",tensi:155,gula:118,kol:205,au:7.1},{m:"Agu",tensi:158,gula:122,kol:200,au:7.4},{m:"Sep",tensi:152,gula:119,kol:210,au:7.2},{m:"Okt",tensi:160,gula:125,kol:215,au:7.6},{m:"Nov",tensi:156,gula:121,kol:208,au:7.3},{m:"Des",tensi:162,gula:128,kol:220,au:7.8}]},
-    {id:202,name:"Amma B",rel:"Istri",age:66,gender:"P",initials:"AM",color:"#7A3A10",textColor:"#F5C4A0",data:[{m:"Jul",tensi:118,gula:92,kol:185,au:4.8},{m:"Agu",tensi:115,gula:89,kol:188,au:4.6},{m:"Sep",tensi:120,gula:94,kol:182,au:5.0},{m:"Okt",tensi:117,gula:91,kol:190,au:4.9},{m:"Nov",tensi:119,gula:93,kol:186,au:4.7},{m:"Des",tensi:116,gula:90,kol:184,au:4.8}]},
-    {id:203,name:"Cucu B1",rel:"Putri (luar negeri)",age:28,gender:"P",initials:"CB",color:"#7A3A10",textColor:"#F5C4A0",data:[{m:"Jul",tensi:null,gula:null,kol:null,au:null},{m:"Agu",tensi:null,gula:null,kol:null,au:null},{m:"Sep",tensi:108,gula:82,kol:162,au:3.8},{m:"Okt",tensi:null,gula:null,kol:null,au:null},{m:"Nov",tensi:110,gula:84,kol:165,au:4.0},{m:"Des",tensi:null,gula:null,kol:null,au:null}]},
-  ]},
-  {id:3,name:"Keluarga C",icon:"KC",color:"#1A1A5C",textColor:"#AAAAE8",
-   members:[
-    {id:301,name:"Pakdhe C",rel:"Kepala keluarga",age:65,gender:"L",initials:"PC",color:"#1A1A5C",textColor:"#AAAAE8",data:[{m:"Jul",tensi:162,gula:112,kol:225,au:6.8},{m:"Agu",tensi:158,gula:118,kol:220,au:7.0},{m:"Sep",tensi:154,gula:115,kol:215,au:6.9},{m:"Okt",tensi:150,gula:110,kol:210,au:6.7},{m:"Nov",tensi:148,gula:108,kol:205,au:6.6},{m:"Des",tensi:145,gula:106,kol:200,au:6.5}]},
-    {id:302,name:"Budhe C",rel:"Istri",age:60,gender:"P",initials:"BC",color:"#1A1A5C",textColor:"#AAAAE8",data:[{m:"Jul",tensi:112,gula:88,kol:178,au:4.2},{m:"Agu",tensi:115,gula:90,kol:182,au:4.4},{m:"Sep",tensi:110,gula:86,kol:176,au:4.1},{m:"Okt",tensi:118,gula:92,kol:185,au:4.5},{m:"Nov",tensi:113,gula:89,kol:179,au:4.3},{m:"Des",tensi:116,gula:91,kol:181,au:4.2}]},
-    {id:303,name:"Cucu C1",rel:"Putra",age:23,gender:"L",initials:"CC",color:"#1A1A5C",textColor:"#AAAAE8",data:[{m:"Jul",tensi:112,gula:84,kol:162,au:4.8},{m:"Agu",tensi:110,gula:82,kol:158,au:4.6},{m:"Sep",tensi:114,gula:86,kol:165,au:4.9},{m:"Okt",tensi:111,gula:83,kol:160,au:4.7},{m:"Nov",tensi:113,gula:85,kol:163,au:4.8},{m:"Des",tensi:112,gula:84,kol:161,au:4.7}]},
-  ]},
-  {id:4,name:"Keluarga D",icon:"KD",color:"#4A1A38",textColor:"#E8A8C8",
-   members:[
-    {id:401,name:"Pakdhe D",rel:"Kepala keluarga",age:69,gender:"L",initials:"PD",color:"#4A1A38",textColor:"#E8A8C8",data:[{m:"Jul",tensi:134,gula:108,kol:210,au:6.5},{m:"Agu",tensi:136,gula:112,kol:215,au:6.7},{m:"Sep",tensi:132,gula:110,kol:208,au:6.4},{m:"Okt",tensi:138,gula:115,kol:218,au:6.8},{m:"Nov",tensi:135,gula:111,kol:212,au:6.6},{m:"Des",tensi:140,gula:116,kol:220,au:6.9}]},
-    {id:402,name:"Budhe D",rel:"Istri",age:65,gender:"P",initials:"BD",color:"#4A1A38",textColor:"#E8A8C8",data:[{m:"Jul",tensi:124,gula:96,kol:195,au:5.1},{m:"Agu",tensi:120,gula:94,kol:198,au:5.0},{m:"Sep",tensi:126,gula:98,kol:192,au:5.2},{m:"Okt",tensi:122,gula:95,kol:200,au:5.3},{m:"Nov",tensi:128,gula:99,kol:196,au:5.1},{m:"Des",tensi:125,gula:97,kol:202,au:5.2}]},
-    {id:403,name:"Cucu D1",rel:"Putra",age:38,gender:"L",initials:"CD",color:"#4A1A38",textColor:"#E8A8C8",data:[{m:"Jul",tensi:122,gula:90,kol:182,au:5.5},{m:"Agu",tensi:120,gula:88,kol:178,au:5.4},{m:"Sep",tensi:124,gula:92,kol:185,au:5.6},{m:"Okt",tensi:119,gula:87,kol:176,au:5.3},{m:"Nov",tensi:123,gula:91,kol:181,au:5.5},{m:"Des",tensi:121,gula:89,kol:179,au:5.4}]},
-  ]},
-];
 const PARAMS=[
   {key:"tensi",label:"Tekanan Darah",unit:"mmHg",color:"#E05252",normal:[0,129],warn:[130,139],danger:[140,999]},
   {key:"gula",label:"Gula Darah",unit:"mg/dL",color:"#4A90D9",normal:[0,99],warn:[100,125],danger:[126,999]},
-  {key:"kol",label:"Kolesterol",unit:"mg/dL",color:"#9B59B6",normal:[0,199],warn:[200,239],danger:[240,999]},
-  {key:"au",label:"Asam Urat",unit:"mg/dL",color:"#E67E22",normal:[0,6.9],warn:[7.0,7.9],danger:[8.0,999]},
+  {key:"kolesterol",label:"Kolesterol",unit:"mg/dL",color:"#9B59B6",normal:[0,199],warn:[200,239],danger:[240,999]},
+  {key:"asam_urat",label:"Asam Urat",unit:"mg/dL",color:"#E67E22",normal:[0,6.9],warn:[7.0,7.9],danger:[8.0,999]},
 ];
-let aFam=null,aMem=null,aPar="tensi",chart=null;
-function gs(p,v){if(v===null)return"na";if(v>=p.danger[0])return"danger";if(v>=p.warn[0])return"warn";return"ok";}
+const FAM_COLORS=[
+  {color:"#1A4A30",textColor:"#9FD4B8"},{color:"#7A3A10",textColor:"#F5C4A0"},
+  {color:"#1A1A5C",textColor:"#AAAAE8"},{color:"#4A1A38",textColor:"#E8A8C8"},
+  {color:"#2A4A1A",textColor:"#B4D898"},{color:"#1A3A5C",textColor:"#A8C4E8"},
+];
+
+let FAMILIES=[], aFam=null, aMem=null, aPar="tensi", chart=null;
+
+function gs(p,v){if(v===null||v===undefined)return"na";if(v>=p.danger[0])return"danger";if(v>=p.warn[0])return"warn";return"ok";}
 function gc(s){return s==="ok"?"#27AE60":s==="warn"?"#F39C12":s==="danger"?"#E74C3C":"#BBB";}
 function gl(s){return s==="ok"?"Normal":s==="warn"?"Borderline":s==="danger"?"Tinggi":"Belum dicek";}
-function gmos(m){const l=m.data[m.data.length-1];for(const p of PARAMS){if(gs(p,l[p.key])==="danger")return"danger";}for(const p of PARAMS){if(gs(p,l[p.key])==="warn")return"warn";}if(PARAMS.every(p=>l[p.key]===null))return"na";return"ok";}
-function glv(m,k){for(let i=m.data.length-1;i>=0;i--){if(m.data[i][k]!==null)return m.data[i][k];}return null;}
-function fmt(v){if(v===null)return"—";return Number.isInteger(v)?String(v):v.toFixed(1);}
+function fmt(v){if(v===null||v===undefined)return"—";return Number.isInteger(v)?String(v):parseFloat(v).toFixed(1);}
+function initials(name){return name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);}
+
+function gmos(m){
+  if(!m.records||!m.records.length)return"na";
+  const l=m.records[m.records.length-1];
+  for(const p of PARAMS){if(gs(p,l[p.key])==="danger")return"danger";}
+  for(const p of PARAMS){if(gs(p,l[p.key])==="warn")return"warn";}
+  if(PARAMS.every(p=>l[p.key]===null||l[p.key]===undefined))return"na";
+  return"ok";
+}
+function glv(m,key){
+  if(!m.records||!m.records.length)return null;
+  for(let i=m.records.length-1;i>=0;i--){if(m.records[i][key]!==null&&m.records[i][key]!==undefined)return m.records[i][key];}
+  return null;
+}
+
+async function loadData(){
+  try{
+    const fams = await db('families?select=*&order=id');
+    const mems = await db('members?select=*&order=id');
+    const recs = await db('health_records?select=*&order=tahun,bulan');
+    FAMILIES = fams.map((f,i)=>{
+      const fc = FAM_COLORS[i % FAM_COLORS.length];
+      return {
+        ...f,
+        color: f.color || fc.color,
+        textColor: f.text_color || fc.textColor,
+        icon: f.icon || f.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2),
+        members: mems.filter(m=>m.family_id===f.id).map(m=>({
+          ...m,
+          initials: initials(m.name),
+          color: f.color || fc.color,
+          textColor: f.text_color || fc.textColor,
+          records: recs.filter(r=>r.member_id===m.id)
+        }))
+      };
+    });
+    loadFamilyDropdown();
+    rSB();
+    showOV();
+  } catch(e){
+    document.getElementById("main").innerHTML=`<div style="padding:20px;color:#E74C3C;font-size:13px">Gagal memuat data: ${e.message}</div>`;
+  }
+}
+
+function loadFamilyDropdown(){
+  const sel = document.getElementById('inp-family');
+  sel.innerHTML = '<option value="">-- Pilih keluarga --</option>' +
+    FAMILIES.map(f=>`<option value="${f.id}">${f.name}</option>`).join('');
+}
+
+function loadMembersFor(famId){
+  const sel = document.getElementById('inp-member');
+  if(!famId){sel.innerHTML='<option value="">-- Pilih anggota --</option>';return;}
+  const fam = FAMILIES.find(f=>f.id==famId);
+  sel.innerHTML = '<option value="">-- Pilih anggota --</option>' +
+    (fam?fam.members.map(m=>`<option value="${m.id}">${m.name}</option>`).join(''):'');
+}
+
+async function submitData(){
+  const famId = document.getElementById('inp-family').value;
+  const memId = document.getElementById('inp-member').value;
+  const bulan = document.getElementById('inp-bulan').value;
+  const tahun = document.getElementById('inp-tahun').value;
+  const tensi = document.getElementById('inp-tensi').value;
+  const gula = document.getElementById('inp-gula').value;
+  const kol = document.getElementById('inp-kol').value;
+  const au = document.getElementById('inp-au').value;
+  const catatan = document.getElementById('inp-catatan').value;
+
+  if(!memId){alert('Pilih anggota dulu');return;}
+
+  const btn = document.querySelector('.submit-btn');
+  const loading = document.getElementById('loading-inline');
+  const succ = document.getElementById('success-msg');
+  const err = document.getElementById('error-msg');
+
+  btn.disabled=true; loading.style.display='block'; succ.style.display='none'; err.style.display='none';
+
+  try{
+    await db('health_records', 'POST', {
+      member_id: parseInt(memId),
+      bulan, tahun: parseInt(tahun),
+      tensi: tensi?parseInt(tensi):null,
+      gula: gula?parseInt(gula):null,
+      kolesterol: kol?parseInt(kol):null,
+      asam_urat: au?parseFloat(au):null,
+      catatan: catatan||null
+    });
+    succ.style.display='block';
+    document.getElementById('inp-tensi').value='';
+    document.getElementById('inp-gula').value='';
+    document.getElementById('inp-kol').value='';
+    document.getElementById('inp-au').value='';
+    document.getElementById('inp-catatan').value='';
+    await loadData();
+  } catch(e){
+    err.textContent='Gagal menyimpan: '+e.message;
+    err.style.display='block';
+  }
+  btn.disabled=false; loading.style.display='none';
+}
+
+async function addMember(){
+  const famId = document.getElementById('inp-family').value;
+  const name = document.getElementById('new-name').value.trim();
+  const rel = document.getElementById('new-rel').value.trim();
+  const age = document.getElementById('new-age').value;
+  const gender = document.getElementById('new-gender').value;
+  if(!famId||!name){alert('Pilih keluarga dan isi nama');return;}
+  try{
+    await db('members','POST',{family_id:parseInt(famId),name,rel,age:age?parseInt(age):null,gender,initials:initials(name)});
+    document.getElementById('new-name').value='';
+    document.getElementById('new-rel').value='';
+    document.getElementById('new-age').value='';
+    await loadData();
+    alert('Anggota berhasil ditambahkan!');
+  } catch(e){ alert('Gagal: '+e.message); }
+}
+
+function showTab(tab){
+  document.getElementById('view-dashboard').style.display=tab==='dashboard'?'block':'none';
+  document.getElementById('view-input').style.display=tab==='input'?'block':'none';
+  document.getElementById('tab-dashboard').classList.toggle('active',tab==='dashboard');
+  document.getElementById('tab-input').classList.toggle('active',tab==='input');
+}
+
 function rSB(){
-  document.getElementById("sb").innerHTML=FAMILIES.map(f=>{
+  document.getElementById("sb").innerHTML=FAMILIES.length?FAMILIES.map(f=>{
     const dots=f.members.map(m=>`<span class="sdot" style="background:${gc(gmos(m))}"></span>`).join('');
     return`<div class="fi${aFam===f.id?' active':''}" onclick="showF(${f.id})">
-      <div class="fi-row"><div class="fi-icon" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
-      <div><div class="fi-name">${f.name}</div><div class="fi-count">${f.members.length} anggota</div></div></div>
-      <div class="fi-dots">${dots}</div></div>`;
-  }).join('');
+      <div class="fir"><div class="fico" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
+      <div><div class="fin">${f.name}</div><div class="fic">${f.members.length} anggota</div></div></div>
+      <div class="fid">${dots}</div></div>`;
+  }).join(''):'<div style="padding:16px;font-size:12px;color:#5A8A6A">Belum ada data keluarga</div>';
 }
+
 function showOV(){
   aFam=null;aMem=null;rSB();
+  if(!FAMILIES.length){
+    document.getElementById("main").innerHTML=`<div style="padding:20px;text-align:center;color:#888;font-size:13px">
+      <div style="font-size:32px;margin-bottom:12px">&#128115;</div>
+      <div style="font-weight:500;margin-bottom:6px">Belum ada data</div>
+      <div>Tambahkan data keluarga melalui tab Input Pemeriksaan</div>
+    </div>`;return;
+  }
   const all=FAMILIES.flatMap(f=>f.members);
   const nD=all.filter(m=>gmos(m)==="danger").length,nW=all.filter(m=>gmos(m)==="warn").length,nO=all.filter(m=>gmos(m)==="ok").length;
-  const fc=FAMILIES.map(f=>`<div class="fam-card" onclick="showF(${f.id})">
-    <div class="fam-card-hd"><div class="fam-card-icon" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
-    <div><div class="fam-card-name">${f.name}</div><div class="fam-card-sub">${f.members.length} anggota</div></div></div>
-    <div class="mem-row">${f.members.map(m=>`<div class="mm" onclick="event.stopPropagation();showM(${f.id},${m.id})">
-      <div class="mm-av" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
-      <div><div class="mm-name">${m.name}</div><div class="mm-age">${m.age}th</div></div>
+  const fc=FAMILIES.map(f=>`<div class="fcard" onclick="showF(${f.id})">
+    <div class="fchd"><div class="fcico" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
+    <div><div class="fcn">${f.name}</div><div class="fcs">${f.members.length} anggota</div></div></div>
+    <div class="mr">${f.members.map(m=>`<div class="mm" onclick="event.stopPropagation();showM(${f.id},${m.id})">
+      <div class="mmav" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
+      <div><div class="mmn">${m.name}</div><div class="mma">${m.age||''}th</div></div>
       <span class="sdot" style="background:${gc(gmos(m))};margin-left:auto"></span>
     </div>`).join('')}</div></div>`).join('');
   document.getElementById("main").innerHTML=`
-    <div class="ov-stats">
-      <div class="stat"><div class="stat-lbl">Total anggota</div><div class="stat-num">${all.length}</div><div class="stat-sub">${FAMILIES.length} keluarga</div></div>
-      <div class="stat"><div class="stat-lbl">Perlu perhatian</div><div class="stat-num" style="color:#E74C3C">${nD+nW}</div><div class="stat-sub">${nD} tinggi · ${nW} borderline</div></div>
-      <div class="stat"><div class="stat-lbl">Semua normal</div><div class="stat-num" style="color:#27AE60">${nO}</div><div class="stat-sub">parameter aman</div></div>
+    <div class="ovs">
+      <div class="stat"><div class="stl">Total anggota</div><div class="stn">${all.length}</div><div class="sts">${FAMILIES.length} keluarga</div></div>
+      <div class="stat"><div class="stl">Perlu perhatian</div><div class="stn" style="color:#E74C3C">${nD+nW}</div><div class="sts">${nD} tinggi · ${nW} borderline</div></div>
+      <div class="stat"><div class="stl">Semua normal</div><div class="stn" style="color:#27AE60">${nO}</div><div class="sts">parameter aman</div></div>
     </div>
-    <div class="sec-hd">Semua keluarga</div>${fc}`;
+    <div class="sechd">Semua keluarga</div>${fc}`;
 }
+
 function showF(fid){
   aFam=fid;aMem=null;if(chart){chart.destroy();chart=null;}rSB();
   const f=FAMILIES.find(x=>x.id===fid);
   const cards=f.members.map(m=>{
-    const cells=PARAMS.map(p=>{const v=glv(m,p.key);const ps=v===null?"na":gs(p,v);return`<div class="mc-p"><div class="mc-pl">${p.label}</div><div class="mc-pv" style="color:${gc(ps)}">${fmt(v)}</div><div class="mc-pu">${v===null?"belum dicek":p.unit}</div></div>`;}).join('');
+    const cells=PARAMS.map(p=>{const v=glv(m,p.key);const ps=v===null?"na":gs(p,v);
+      return`<div class="mcp"><div class="mcpl">${p.label}</div><div class="mcpv" style="color:${gc(ps)}">${fmt(v)}</div><div class="mcpu">${v===null?"belum dicek":p.unit}</div></div>`;}).join('');
     return`<div class="mc" onclick="showM(${fid},${m.id})">
-      <div class="mc-top"><div class="mc-av" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
-      <div style="flex:1"><div class="mc-name">${m.name}</div><div class="mc-sub">${m.rel} · ${m.age} th</div></div>
+      <div class="mct"><div class="mcav" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
+      <div style="flex:1"><div class="mcn">${m.name}</div><div class="mcs">${m.rel||''} · ${m.age||''}th</div></div>
       <span class="sdot" style="background:${gc(gmos(m))}"></span></div>
-      <div class="mc-ps">${cells}</div></div>`;
-  }).join('');
+      <div class="mcps">${cells}</div></div>`;}).join('');
   document.getElementById("main").innerHTML=`
     <button class="back-btn" onclick="showOV()">&#8592; Semua keluarga</button>
-    <div class="fv-hd"><div class="fv-icon" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
-    <div><div class="fv-title">${f.name}</div><div class="fv-sub">${f.members.length} anggota · Des 2024</div></div></div>
+    <div class="fvhd"><div class="fvico" style="background:${f.color};color:${f.textColor}">${f.icon}</div>
+    <div><div class="fvt">${f.name}</div><div class="fvs">${f.members.length} anggota</div></div></div>
     <div class="mg">${cards}</div>`;
 }
+
 function showM(fid,mid){
   aFam=fid;aMem=mid;aPar="tensi";if(chart){chart.destroy();chart=null;}rSB();
   const f=FAMILIES.find(x=>x.id===fid),m=f.members.find(x=>x.id===mid);
-  const isAbs=PARAMS.every(p=>m.data[m.data.length-1][p.key]===null);
+  const isAbs=!m.records||!m.records.length;
   const pc=PARAMS.map(p=>{
     const v=glv(m,p.key),ps=v===null?"na":gs(p,v);
-    const pv=m.data.filter(d=>d[p.key]!==null),prev=pv.length>=2?pv[pv.length-2][p.key]:null;
+    const pv=m.records?m.records.filter(d=>d[p.key]!==null&&d[p.key]!==undefined):[],prev=pv.length>=2?pv[pv.length-2][p.key]:null;
     const diff=v!==null&&prev!==null?parseFloat((v-prev).toFixed(1)):null;
     const ts=diff===null?"":diff>0?`&#8593; ${Math.abs(diff)}`:diff<0?`&#8595; ${Math.abs(diff)}`:"&#8594;";
     const tc=diff===null?"transparent":diff>0?"#E74C3C":diff<0?"#27AE60":"#999";
-    return`<div class="p4c" style="border-top-color:${p.color}"><div class="p4l">${p.label}</div><div class="p4v">${fmt(v)}</div><div class="p4u">${v===null?"belum dicek":p.unit}</div><div class="p4s" style="color:${gc(ps)}">${gl(ps)} <span style="color:${tc};margin-left:4px;font-size:11px">${ts}</span></div></div>`;
-  }).join('');
+    return`<div class="p4c" style="border-top-color:${p.color}"><div class="p4l">${p.label}</div><div class="p4v">${fmt(v)}</div><div class="p4u">${v===null?"belum dicek":p.unit}</div><div class="p4s" style="color:${gc(ps)}">${gl(ps)} <span style="color:${tc};margin-left:4px;font-size:11px">${ts}</span></div></div>`;}).join('');
   const tabs=PARAMS.map(p=>`<button class="ctab${aPar===p.key?' active':''}" onclick="swTab('${p.key}',${fid},${mid})">${p.label}</button>`).join('');
-  const hr=[...m.data].reverse().map((d,i)=>`<tr><td style="font-weight:${i===0?600:400}">${d.m} '24${i===0?' <span class="loz">terbaru</span>':''}</td>${PARAMS.map(p=>{const v=d[p.key];if(v===null)return`<td style="color:#ccc">—</td>`;const ps=gs(p,v);return`<td style="color:${gc(ps)};font-weight:${ps!=='ok'?500:400}">${fmt(v)}</td>`;}).join('')}</tr>`).join('');
+  const recs=m.records?[...m.records].reverse():[];
+  const hr=recs.map((d,i)=>`<tr><td style="font-weight:${i===0?600:400}">${d.bulan} ${d.tahun}${i===0?' <span class="loz">terbaru</span>':''}</td>${PARAMS.map(p=>{const v=d[p.key];if(v===null||v===undefined)return`<td style="color:#ccc">—</td>`;const ps=gs(p,v);return`<td style="color:${gc(ps)};font-weight:${ps!=='ok'?500:400}">${fmt(v)}</td>`;}).join('')}</tr>`).join('');
   document.getElementById("main").innerHTML=`
     <button class="back-btn" onclick="showF(${fid})">&#8592; ${f.name}</button>
-    ${isAbs?'<div class="na-ban">&#128205; Anggota ini belum dicek bulan ini. Data terakhir dari bulan sebelumnya.</div>':''}
-    <div class="ind-hd"><div class="ind-av" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
-    <div><div class="ind-name">${m.name}</div><div class="ind-sub">${m.rel} · ${m.age} tahun · ${m.gender==="L"?"Laki-laki":"Perempuan"}</div></div></div>
+    ${isAbs?'<div class="naban">&#128205; Belum ada data pemeriksaan untuk anggota ini.</div>':''}
+    <div class="ihd"><div class="iav" style="background:${m.color};color:${m.textColor}">${m.initials}</div>
+    <div><div class="in">${m.name}</div><div class="is">${m.rel||''} · ${m.age||''}th · ${m.gender==="L"?"Laki-laki":"Perempuan"}</div></div></div>
     <div class="p4g">${pc}</div>
     <div class="cw"><div class="ctabs">${tabs}</div><canvas id="tc" height="130"></canvas></div>
-    <div style="font-size:10px;font-weight:600;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em">Riwayat pemeriksaan</div>
-    <div style="overflow-x:auto"><table class="ht"><thead><tr><th>Bulan</th>${PARAMS.map(p=>`<th>${p.label}</th>`).join('')}</tr></thead><tbody>${hr}</tbody></table></div>`;
+    ${recs.length?`<div style="font-size:10px;font-weight:600;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em">Riwayat pemeriksaan</div>
+    <div style="overflow-x:auto"><table class="ht"><thead><tr><th>Bulan</th>${PARAMS.map(p=>`<th>${p.label}</th>`).join('')}</tr></thead><tbody>${hr}</tbody></table></div>`:''}`;
   drawC(m);
 }
+
 function drawC(m){
   if(chart){chart.destroy();chart=null;}
-  const p=PARAMS.find(x=>x.key===aPar),vd=m.data.filter(d=>d[p.key]!==null);
+  const p=PARAMS.find(x=>x.key===aPar);
+  const valid=m.records?m.records.filter(d=>d[p.key]!==null&&d[p.key]!==undefined):[];
   const ctx=document.getElementById("tc");if(!ctx)return;
-  if(vd.length<2){const c=ctx.getContext("2d");c.fillStyle="#999";c.font="13px sans-serif";c.textAlign="center";c.fillText("Data belum cukup",ctx.offsetWidth/2,60);return;}
-  const labels=vd.map(d=>d.m),vals=vd.map(d=>d[p.key]);
+  if(valid.length<2){const c=ctx.getContext("2d");c.fillStyle="#999";c.font="13px sans-serif";c.textAlign="center";c.fillText("Data belum cukup untuk ditampilkan",ctx.offsetWidth/2,60);return;}
+  const labels=valid.map(d=>`${d.bulan.slice(0,3)} ${d.tahun}`),vals=valid.map(d=>parseFloat(d[p.key]));
   chart=new Chart(ctx,{type:'line',data:{labels,datasets:[{data:vals,borderColor:p.color,backgroundColor:p.color+'18',borderWidth:2,pointBackgroundColor:vals.map(v=>gc(gs(p,v))),pointRadius:5,pointHoverRadius:7,fill:true,tension:0.35}]},options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.parsed.y} ${p.unit}`,afterLabel:c=>gl(gs(p,c.parsed.y))}}},scales:{x:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#999',font:{size:11}}},y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#999',font:{size:11}},min:Math.min(...vals)*0.93,max:Math.max(...vals)*1.07}}}});
 }
+
 function swTab(k,fid,mid){
   aPar=k;
   document.querySelectorAll('.ctab').forEach(t=>t.classList.toggle('active',t.textContent===PARAMS.find(p=>p.key===k).label));
   const f=FAMILIES.find(x=>x.id===fid),m=f.members.find(x=>x.id===mid);drawC(m);
 }
-showOV();
+
+function enterApp(){
+  document.getElementById('loading').classList.add('out');
+  setTimeout(()=>{document.getElementById('loading').style.display='none';document.getElementById('app').classList.add('show');loadData();},650);
+}
 </script>
 </body>
 </html>
