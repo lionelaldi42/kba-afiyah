@@ -284,7 +284,7 @@ function glv(m,key){
 
 async function loadData(){
   try{
-    const fams = await db('families?select=*&order=id');
+   const fams = await db('families?select=*&order=sort_order');
     const mems = await db('members?select=*&order=id');
     const recs = await db('health_records?select=*&order=tahun,bulan');
     FAMILIES = fams.map((f,i)=>{
